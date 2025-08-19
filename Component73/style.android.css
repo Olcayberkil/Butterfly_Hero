@@ -1,0 +1,361 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: 'Arial', sans-serif;
+}
+
+.component73 {
+    width: 100%;
+    height: 100vh;
+    background: #00B9F1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    color: white;
+    text-align: center;
+}
+
+.header {
+    padding: 1.5rem 1rem 1rem;
+    font-size: 1.2rem;
+}
+
+.header h1 {
+    line-height: 1.3;
+    font-weight: bold;
+    font-size: 3.5rem;
+}
+.header strong{
+    font-size: 4.5rem;
+
+}
+
+.content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    perspective: 600px;
+    perspective-origin: center top;
+}
+
+.content {
+    perspective: 800px;
+    perspective-origin: center top;
+}
+
+.game-area {
+    width: 80%;
+    height: 700px;
+    background: linear-gradient(to bottom, #e0f9ff 0%, #ffffff 100%);
+    border-radius: 10px;
+    box-shadow: 0 15px 15px rgba(0,0,0,0.15);
+    position: relative;
+    overflow: hidden;
+    transform: rotateX(25deg);
+    transform-style: preserve-3d;
+}
+.game-area::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 180px;
+    background: linear-gradient(to bottom, #00B9F1 0%, rgba(0, 185, 241, 0.5) 30%, rgba(255, 255, 255, 0) 100%);
+    z-index: 5;
+    pointer-events: none;
+}
+
+.track {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.butterfly {
+    width: 80px;
+    height: auto;
+    display: block;
+    pointer-events: auto;
+    cursor: pointer;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+
+.lane {
+    flex: 1;
+    border: 0.5px solid #bbb;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.hit-line {
+    position: absolute;
+    bottom: 100px;
+    height: 6px;
+    width: 100%;
+    background-color: red;
+    z-index: 10;
+     perspective: 800px;
+    perspective-origin: center top;
+}
+
+.slogan {
+    margin-top: 13rem;
+    font-size: 3rem;
+    line-height: 1.5;
+    color: white;
+}
+
+.slogan strong {
+    font-weight: 700;
+}
+
+.hand-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hand-icon img {
+    width: 60px;
+    height: auto;
+    margin-top: 5px;
+    transform: scale(2.5);
+    transform-origin: center;
+}
+
+
+.footer {
+    padding: 1rem;
+    background: white;
+}
+
+.footer .logo {
+    width: 520px;
+}
+.butterfly {
+    width: 98px;
+    height: auto;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+    cursor: pointer;
+    pointer-events: auto;
+}
+
+.butterfly:active {
+    transform: translateX(-50%) scale(0.9);
+}
+.end-message {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+}
+
+.message-box {
+    background: #ffffff;
+    color: #00B9F1;
+    padding: 3.5rem;
+    border-radius: 1rem;
+    text-align: center;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
+    width: 70%;
+}
+
+.message-box h2 {
+    font-size: 5rem;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+}
+
+.message-box p {
+    font-size: 2.8rem;
+    margin: 1.5rem 0;
+}
+
+.message-box button {
+    margin-top: 1.2rem;
+    padding: 1.8rem 2.5rem;
+    font-size: 2rem;
+    background: #00B9F1;
+    color: white;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+}
+.time-bar {
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 70%;
+    height: 32px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 7px;
+    z-index: 10;
+    overflow: hidden;
+    backdrop-filter: blur(2px);
+}
+
+.time-fill {
+    height: 100%;
+    width: 100%;
+    background: #ff3c3c;
+    transition: width 0.1s linear;
+}
+
+.time-label {
+    position: absolute;
+    top: 0px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 2rem;
+    color: white;
+    font-weight: bold;
+    pointer-events: none;
+}
+
+
+.score-display {
+    position: absolute;
+    top: 20px;
+    left:10px;
+    z-index: 20;
+    font-size: 1.6rem;
+    color: white;
+    font-weight: bold;
+    background: rgba(0, 0, 0, 0.25);
+    padding: 6px 14px;
+    border-radius: 10px;
+}
+
+
+.end-message.win {
+    animation: glowPulse 2s infinite alternate;
+}
+.row {
+    height: 100%;
+    display: flex;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    position: absolute;
+    left: 0;
+    width: 100%;
+}
+.row.glow {
+    box-shadow: 0 0 20px rgba(255, 0, 0, 0.6);
+    transition: box-shadow 0.3s ease;
+    z-index: 5;
+}
+
+
+
+
+@keyframes glowPulse {
+    0% { box-shadow: 0 0 20px rgba(0, 255, 150, 0.4); }
+    100% { box-shadow: 0 0 60px rgba(0, 255, 150, 0.9); }
+}
+
+.confetti {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1000;
+}
+.start-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, #00B9F1 0%, rgba(0, 185, 241, 0.5) 30%, rgba(255, 255, 255, 0) 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.start-button {
+    font-size: 2.4rem;
+    padding: 1.4rem 2.4rem;
+    background: #00B9F1;
+    color: white;
+    border: none;
+    border-radius: 1rem;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.start-button:hover {
+    background: #009fd9;
+}
+.cell {
+    width: 100%;
+    height: 14.5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.3s ease;
+}
+
+.cell.clicked {
+    background-color:  #009fd977; 
+}
+.reward-box {
+    margin-top: 1rem;
+    padding: 1rem;
+    border: 2px dashed black;
+    background:#009fd93b;
+    border-radius: 12px;
+    text-align: center;
+    animation: pulse 1.2s ease-in-out infinite alternate;
+}
+
+.gift-text {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: #e91e63;
+}
+
+.gift-image {
+    width: 100px;
+    height: auto;
+    animation: bounce 1.2s infinite;
+}
+
+.gift-name {
+    margin-top: 0.5rem;
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #333;
+}
+
+@keyframes pulse {
+    from { transform: scale(1); }
+    to { transform: scale(1.03); }
+}
+
+
+
+
+
+
+
